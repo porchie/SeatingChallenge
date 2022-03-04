@@ -25,11 +25,13 @@ public class Main {
 
     public static void printStudentTwoD(Student[][] arr)
     {
+        int computerNum = 1;
         for (int r = 0; r < arr.length; r++) {
-            System.out.print("| ");
+            System.out.print("|");
             for (int c = 0; c < arr[r].length; c++) {
                 if(r==2&&c==11) break;
-                System.out.print(arr[r][c].getName() + " | ");
+                System.out.print(computerNum + " " + arr[r][c].getName() + " | ");
+                computerNum++;
             }
             System.out.println();
         }
