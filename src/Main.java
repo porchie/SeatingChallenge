@@ -12,7 +12,7 @@ public class Main {
             isWorking = seat.isActuallyWorking(newSeats);
             //System.out.println(isWorking);
         }
-        System.out.println(">:( doesnt work aasjdfiafisdisifjviv");
+        System.out.println("not good");
 **/
         String[][] seats = {{"Moiz", "Angie", "Taran", "Kelvin", "Kyler", "David", "WenHao", "Nicole", "Jennifer", "Michelle"},
                 {"Beckett", "Raymond", "Lucy", "Apramjot", "Justin Lema", "Sam", "Tristan", "Pradeep", "Mohammad", "Haley", null, "Rely"},
