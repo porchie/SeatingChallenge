@@ -22,7 +22,6 @@ public class Student {
         }
         else
         return false;
-
     }
 
     public String getAdjacentLeft() {

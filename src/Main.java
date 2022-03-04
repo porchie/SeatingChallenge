@@ -1,12 +1,25 @@
 public class Main {
     public static void main(String[] args) {
+        /**
+        boolean isWorking = true;
+        while(isWorking) {
+            String[][] seats = {{"Moiz", "Angie", "Taran", "Kelvin", "Kyler", "David", "WenHao", "Nicole", "Jennifer", "Michelle"},
+                    {"Beckett", "Raymond", "Lucy", "Apramjot", "Justin Lema", "Sam", "Tristan", "Pradeep", "Mohammad", "Haley", null, "Rely"},
+                    {"Cheng Han", "Qihan", "Kevin", "Ryan", "Justin Liu", "Jeffrey", "Danny", "Elliot", "Benson", "Fiona", "Neil", "Kaitlyn"}};
+            SeatScrambler seat = new SeatScrambler(seats);
+            Student[][] newSeats = seat.newSeatsMaker();
+            printStudentTwoD(newSeats);
+            isWorking = seat.isActuallyWorking(newSeats);
+            //System.out.println(isWorking);
+        }
+        System.out.println(">:( doesnt work aasjdfiafisdisifjviv");
+**/
         String[][] seats = {{"Moiz", "Angie", "Taran", "Kelvin", "Kyler", "David", "WenHao", "Nicole", "Jennifer", "Michelle"},
                 {"Beckett", "Raymond", "Lucy", "Apramjot", "Justin Lema", "Sam", "Tristan", "Pradeep", "Mohammad", "Haley", null, "Rely"},
                 {"Cheng Han", "Qihan", "Kevin", "Ryan", "Justin Liu", "Jeffrey", "Danny", "Elliot", "Benson", "Fiona", "Neil", "Kaitlyn"}};
         SeatScrambler seat = new SeatScrambler(seats);
-        //seat.test();
-        printStudentTwoD(seat.newSeatsMaker());
-       // seat.newSeatsMaker();
+        Student[][] newSeats = seat.newSeatsMaker();
+        printStudentTwoD(newSeats);
 
     }
 
