@@ -73,14 +73,58 @@ public class SeatScrambler {
             changedSeats[rowCol[0]][rowCol[1]] = s;
             //System.out.println();
         }
+        ArrayList<Integer[]> sameNeighbors = studentsThatHaveSameNeighbor(changedSeats);
+
+        while(sameNeighbors.size() > 0)
+        {
+            swapSameNeighbors(changedSeats,sameNeighbors);
+            sameNeighbors = studentsThatHaveSameNeighbor(changedSeats);
+        }
 
 
         return changedSeats;
     }
 
-    private boolean makeNoNeighbors(Student[][] arr)
+    private ArrayList<Integer[]> studentsThatHaveSameNeighbor(Student[][] arr)
     {
-        return false;
+        ArrayList<Integer[]> rowColSameNeigh = new ArrayList<>();
+        for (int r = 0; r < arr.length; r++) {
+            for (int c = 1; c < arr[r].length-1; c++) {
+                Student curStudent = arr[r][c];
+                if(r!=2&&c!=10) {
+                    if (arr[r][c - 1].getName().equals(curStudent.getAdjacentLeft()) || arr[r][c + 1].getName().equals(curStudent.getAdjacentRight())) {
+                        Integer[] rowColArr = {r, c};
+                        rowColSameNeigh.add(rowColArr);
+                        if (arr[r][c + 1].getName().equals(curStudent.getAdjacentRight())) c++;
+                    }
+                }
+            }
+        }
+        return rowColSameNeigh;
+    }
+
+    private void swapSameNeighbors(Student[][] arr, ArrayList<Integer[]> sameNList)
+    {
+        while(sameNList.size()>1)
+        {
+            Integer[] idx1 = sameNList.get(0);
+            Integer[] idx2 = sameNList.get(1);
+            Student temp = arr[idx1[0]][idx1[1]];
+            arr[idx1[0]][idx1[1]] = arr[idx2[0]][idx2[1]];
+            arr[idx2[0]][idx2[1]] = temp;
+
+            sameNList.remove(0);
+            sameNList.remove(0);
+        }
+        if(sameNList.size()==1)
+        {
+            int random = rand.nextInt(32)+1;
+            int[] rowCol = rowColfromSeat(random);
+            Integer[] idx = sameNList.get(0);
+            Student temp = arr[idx[0]][idx[1]];
+            arr[idx[0]][idx[1]] = arr[rowCol[0]][rowCol[1]];
+            arr[rowCol[0]][rowCol[1]] = temp;
+        }
     }
     private int[] rowColfromSeat(int seat)
     {

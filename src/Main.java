@@ -7,6 +7,7 @@ public class Main {
         //seat.test();
         printStudentTwoD(seat.newSeatsMaker());
        // seat.newSeatsMaker();
+
     }
 
     public static void printStudentTwoD(Student[][] arr)
